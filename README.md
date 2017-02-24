@@ -3,7 +3,7 @@
 ![Ari](./assets/ari.png)
 
 ####DESCRIPTION
-
+ 
 Coffee's not hot enough? Welcome to Hollywood!
 
 Introducting Gossip Hollywood Gurl! This is a site to share your assistant job happenings in the entertainment industry! (but we all know that you're still an unpaid intern). 
