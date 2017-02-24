@@ -1,6 +1,6 @@
 #Gossip Hollywood Gurl #GHG
 
-![Ari](./assets/ari.png)
+![Ari](./app/assets/images/README_images/ari.png)
 
 ####DESCRIPTION
  
@@ -35,5 +35,5 @@ Started with creating the wireframe, ERD, and trello board to help organize and 
 
 ###<a href="https://trello.com/b/X3rNmUG5/project-2-gossip-hollywood-gurl">Trello Board</a>
 
-![WIREFRAME](./assets/wireframe.JPG)
-![ERD](./assets/erd.JPG)
+![WIREFRAME](./app/assets/images/README_images/wireframe.JPG)
+![ERD](./app/assets/images/README_images/erd.JPG)
