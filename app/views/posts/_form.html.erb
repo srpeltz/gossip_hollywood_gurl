@@ -1,0 +1,30 @@
+<%= form_for @post do |f| %>
+
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div>
+        <%= f.label :boss_name %>
+        <%= f.text_field :boss_name %>
+    </div>
+
+    <div>
+        <%= f.label :boss_company %>
+        <%= f.text_field :boss_company %>
+    </div>
+
+    <div>
+        <%= f.label :boss_title %>
+        <%= f.text_field :boss_title %>
+    </div>
+
+    <div>
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+    </div>
+
+    <%= f.submit %>
+
+<% end %>

@@ -12,4 +12,14 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def create
+    @post = Post.new(params.require(:post).permit(:title, :boss_name, :boss_company, :boss_title, :boss_company, :body ))
+
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
+  end
+
 end

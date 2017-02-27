@@ -1,34 +1,5 @@
 <h1>Create a Post!</h1>
 
-<%= form_for @post do |f| %>
-
-    <div>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-    </div>
-
-    <div>
-        <%= f.label :boss_name %>
-        <%= f.text_field :boss_name %>
-    </div>
-
-    <div>
-        <%= f.label :boss_company %>
-        <%= f.text_field :boss_company %>
-    </div>
-
-    <div>
-        <%= f.label :boss_title %>
-        <%= f.text_field :boss_title %>
-    </div>
-
-    <div>
-        <%= f.label :body %>
-        <%= f.text_field :body %>
-    </div>
-
-    <%= f.submit "Add Post!" %>
-
-<% end %>
+<%= render 'form' %>
 
 <%= link_to "Back to the list!", posts_path %>

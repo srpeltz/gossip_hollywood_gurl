@@ -6,13 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-Post.destroy_all
-
 users = User.create([
-  {email: "email", user_name: "User Name", password_digest: "password", industry: "industry", company: "company", title: "title"}
+  {email: "email@test.com", user_name: "User Name Test", password_digest: "password", industry: "industry test", company: "company test", title: "title test"}
   ])
 
-
+Post.destroy_all
 posts = Post.create([
-  {title: "The first post", boss_name: "Boss Name", boss_company: "Boss Company", boss_title: "Boss Title", body: "My boss made me do this bull shit the other day... OMG"}
+  {title: "The first post", boss_name: "Boss Name test", boss_company: "Boss Company test", boss_title: "Boss Title test", body: "My boss made me do this bull shit the other day... OMG"}
   ])
