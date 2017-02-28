@@ -7,9 +7,9 @@
   <% @posts.each do |p| %>
     <li><%= p.title %>
     <br>
-    <%= p.user.user_name %>
+    Post by: <%= p.user.user_name %>
     <br>
     <%= p.body %>
-    </li>
+    <br>
     <% end %>
 </ul>
