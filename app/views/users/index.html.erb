@@ -3,7 +3,9 @@
   <% @users.each do |user| %>
   <li><%= user.email %> |
       <%= user.user_name %> |
-      <%= user.industry %>
+      <%= user.industry %> |
+      <%= user.company %> |
+      <%= user.title %> |
   </li>
   <% end %>
 </ul>

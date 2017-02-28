@@ -5,11 +5,8 @@
 
 <ul>
   <% @posts.each do |p| %>
-    <li><%= p.title %>
-    <br>
-    Post by: <%= p.user.user_name %>
-    <br>
-    <%= p.body %>
-    <br>
+    <li><h3><strong><%=link_to "#{p.title}", post_path(p) %></strong></h3>
+    <p><i>Post by: <%= p.user.user_name %></i></p>
+    <p><%= p.body %></p>
     <% end %>
 </ul>
