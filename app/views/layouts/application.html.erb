@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project2</title>
+    <title>Gossip Hollywood Gurl</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +10,15 @@
 
   <body>
     <h1>Gossip Hollywood Gurl</h1>
+    <span>
+      <% if current_user %>
+        <%= "Hello #{current_user.user_name}" %>
+        <%= link_to "log Out", logout_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Log In', login_path %>
+        <%= link_to 'Sign Up', new_user_path %>
+      <% end %>
+    </span>
     <hr>
     <%= yield %>
   </body>

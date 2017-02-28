@@ -7,7 +7,7 @@
   <% @posts.each do |p| %>
     <li><%= p.title %>
     <br>
-    <%= p.user_name %>
+    <%= p.user.user_name %>
     <br>
     <%= p.body %>
     </li>

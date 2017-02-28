@@ -13,7 +13,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :boss_name, :boss_company, :boss_title, :boss_company, :body ))
+    @post = Post.new(params.require(:post).permit(:title, :boss_name, :boss_company, :boss_title, :boss_company, :body))
+
+    @post.user = current_user
 
     if @post.save
       redirect_to posts_path
