@@ -4,8 +4,8 @@
 <hr>
   <ul>
     <h3><strong><%=link_to "#{p.title}", post_path(p) %></strong></h3>
-    <p>Post by: <%= p.user.user_name %> <i><%= time_ago_in_words(p.created_at) %> ago</i></p>
     <p><%= p.body %></p>
+    <p>Post by: <%= p.user.user_name %> <i><%= time_ago_in_words(p.created_at) %> ago</i></p>
   </ul>
 <hr>
 <% end %>
