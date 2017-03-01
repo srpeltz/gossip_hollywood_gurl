@@ -22,11 +22,11 @@
     <%= f.text_field :title %>
   </div>
   <div>
-    <%= f.label :password %>
+    <%= f.label :new_password %>
     <%= f.password_field :password %>
   </div>
   <div>
-    <%= f.label :password_confirmation %>
+    <%= f.label :new_password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
   <div>
@@ -36,4 +36,4 @@
 
 <%= link_to 'Back', users_path %>
 
-<%= link_to "Delete Account", @user, method: :delete, data: { confirm: "Are you sure you want to delte this account?"} %>
+<%= link_to "Delete Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?"} %>
