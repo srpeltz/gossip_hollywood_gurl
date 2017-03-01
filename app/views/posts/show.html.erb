@@ -6,6 +6,23 @@
 <p>Post by:
   <%= @post.user.user_name %> <i><%= time_ago_in_words(@post.created_at) %> ago</i></p>
 
+  <li>
+    <span>
+      <%= link_to like_path(@post), url:{controller: "posts", action: "upvote"}, method: :put do %>
+      LOL Welcome to Hollwyood!
+      <%= @post.get_upvotes.size %>
+      <% end %>
+    </span>
+  </li>
+  <li>
+    <span>
+      <%= link_to dislike_path(@post), url:{controller: "posts", action: "downvote"}, method: :put do %>
+      You should Quit...
+      <%= @post.get_downvotes.size %>
+      <% end %>
+    </span>
+  </li>
+
 <h4>Comments</h4>
 <div>
   <ul>

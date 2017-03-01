@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   post 'post/:id' => 'comments#create'
   delete 'comment/:id' => 'comments#destroy', as: :comment
 
+  put 'dislike/post/:id' => 'posts#downvote', as: :dislike
+  put 'like/post/:id' => 'posts#upvote', as: :like
+
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

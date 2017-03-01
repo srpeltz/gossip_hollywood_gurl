@@ -1,7 +1,7 @@
 <h1>USERS PAGE</h1>
 <ul>
   <% @user.posts.each do |post| %>
-    <%= post.title %>
+    <h4><%= post.title %></h4>
     <%= post.body %>
     <%= link_to "Edit Your Post", edit_post_path(post) %>
   <% end %>
