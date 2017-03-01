@@ -1,11 +1,14 @@
 <h1>USERS PAGE</h1>
 <ul>
-  <% @users.each do |user| %>
-  <li><%= user.email %> |
-      <%= user.user_name %> |
-      <%= user.industry %> |
-      <%= user.company %> |
-      <%= user.title %> |
-  </li>
+  <% @user.posts.each do |post| %>
+    <%= post.title %>
+    <%= post.body %>
+    <%= link_to "Edit Your Post", edit_post_path(post) %>
   <% end %>
 </ul>
+  <%= @user.email %> |
+  <%= @user.user_name %> |
+  <%= "#{@user.industry} |" if @user.industry %>
+  <%= "#{@user.company} |" if @user.company %>
+  <%= "#{@user.title} |" if @user.title%>
+  <%= link_to "Edit Your Account Info", edit_user_path(current_user) %>
