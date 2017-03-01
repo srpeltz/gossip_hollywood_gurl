@@ -48,13 +48,22 @@ class PostsController < ApplicationController
   def upvote
     @post = Post.find(params[:id])
     @post.upvote_by current_user
-    redirect_to :back
+    # redirect_to :back
+    if params[:view] == 'index'
+      redirect_to '/#' + @post.id.to_s
+    else
+      redirect_to :back
+    end
   end
 
   def downvote
     @post = Post.find(params[:id])
     @post.downvote_by current_user
-    redirect_to :back
+    if params[:view] == 'index'
+      redirect_to '/#' + @post.id.to_s
+    else
+      redirect_to :back
+    end
   end
 
   private

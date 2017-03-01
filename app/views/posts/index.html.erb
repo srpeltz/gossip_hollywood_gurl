@@ -2,13 +2,13 @@
 
 <% @posts.each do |p| %>
 <hr>
-  <ul>
+  <ul id="<%= p.id %>">
     <h3><strong><%=link_to "#{p.title}", post_path(p) %></strong></h3>
     <p><%= p.body %></p>
     <p>Post by: <%= p.user.user_name %> <i><%= time_ago_in_words(p.created_at) %> ago</i></p>
     <li>
       <span>
-        <%= link_to like_path(p), url:{controller: "posts", action: "upvote"}, method: :put do %>
+        <%= link_to like_path(p, {view: 'index'}), method: :put do %>
         LOL Welcome to Hollwyood!
         <%= p.get_upvotes.size %>
         <% end %>
@@ -16,7 +16,7 @@
     </li>
     <li>
       <span>
-        <%= link_to dislike_path(p), url:{controller: "posts", action: "downvote"}, method: :put do %>
+        <%= link_to dislike_path(p, {view: 'index'}), method: :put do %>
         You should Quit...
         <%= p.get_downvotes.size %>
         <% end %>
