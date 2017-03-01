@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'posts#index'
   post 'posts' => 'posts#create'
   get 'posts/new' => 'posts#new', as: :new_post
@@ -14,6 +15,9 @@ Rails.application.routes.draw do
   get 'users/:id/edit' => 'users#edit', as: :edit_user
   patch 'users/:id' => 'users#update'
   delete 'users/:id' => 'users#destroy'
+
+  post 'post/:id' => 'comments#create'
+  delete 'comment/:id' => 'comments#destroy', as: :comment
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

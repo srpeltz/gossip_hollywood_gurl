@@ -3,4 +3,22 @@
 <p>Post by: <%= @post.user.user_name %></p>
 <br>
 <p><%= @post.body %></p>
+<ul>
+
+
+<% @post.comments.each do |comment| %>
+  <li>
+    <h5>Comment by: <%= comment.user.user_name %></h5>
+    <%= comment.body %></li>
+    <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete your comment?"} if current_user.user_name == comment.user.user_name%>
+<% end %>
+</ul>
+
+
+<p>New Comment: </p>
+<%= form_for @comment, url:{controller: "comments", action: "create"} do |f| %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>
+
 <%= link_to "Home Page", root_path%>
