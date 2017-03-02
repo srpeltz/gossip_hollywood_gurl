@@ -1,86 +1,46 @@
-<h1>POSTS PAGE</h1>
-
-<hr>
-<% @posts.each do |p| %>
-  <ul id="<%= p.id %>">
-    <h3><strong><%=link_to "#{p.title}", post_path(p) %></strong></h3>
-    <p><%= p.body %></p>
-    <p>Post by: <%= p.user.user_name %> <i><%= time_ago_in_words(p.created_at) %> ago</i></p>
-    <li>
-      <span>
-        <%= link_to like_path(p, {view: 'index'}), method: :put do %>
-        LOL Welcome to Hollwyood!
-        <%= p.get_upvotes.size %>
-        <% end %>
-      </span>
-    </li>
-    <li>
-      <span>
-        <%= link_to dislike_path(p, {view: 'index'}), method: :put do %>
-        You should Quit...
-        <%= p.get_downvotes.size %>
-        <% end %>
-      </span>
-    </li>
-  </ul>
-<hr>
-<% end %>
-
-
 <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Man must explore, and this is exploration at its greatest
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-                        </h2>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Science has not yet mastered prophecy
-                        </h2>
-                        <h3 class="post-subtitle">
-                            We predict too much for the next year and yet far too little for the next ten.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Failure is not an option
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
-                </div>
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts →</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <% @posts.each do |p| %>
+            <div class="post-preview" id="<%= p.id %>">
+                <ul>
+                    <h2 class="post-title">
+                        <%=link_to "#{p.title}", post_path(p) %>
+                    </h2>
+                    <h3 class="post-subtitle">
+                        <%= p.body %>
+                    </h3>
+                </a>
+                <p class="post-meta">Post by:
+                    <%= p.user.user_name %>
+                    <i><%= time_ago_in_words(p.created_at) %>
+                        ago</i>
+                </p>
+                    <span>
+                        <%= link_to like_path(p, {view: 'index'}), method: :put do %>
+                        <button type="button" class="btn btn-info">LOL Welcome to Hollwyood!
+                        <%= p.get_upvotes.size %>
+                        </button>
+                        <% end %>
+                    </span>
+                    <span>
+                        <%= link_to dislike_path(p, {view: 'index'}), method: :put do %>
+                        <button type="button" class="btn btn-warning">You should Quit...
+                        <%= p.get_downvotes.size %>
+                      </button>
+                        <% end %>
+                    </span>
+                    <hr>
+            </ul>
+            <% end %>
         </div>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+            <li class="next">
+                <a href="#">Older Posts →</a>
+            </li>
+        </ul>
     </div>
+</div>
+</div>
