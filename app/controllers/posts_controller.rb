@@ -21,6 +21,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
+      flash.now[:notice] = "Type Some Gossip, Gurl!"
       render :new
     end
   end
@@ -33,6 +34,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update_attributes(post_params)
+      flash[:notice] = "Post Updated"
       redirect_to users_path
     else
       render :edit
@@ -42,7 +44,8 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to root_path
+    flash[:notice] = "Post Deleted"
+    redirect_to users_path
   end
 
   def upvote

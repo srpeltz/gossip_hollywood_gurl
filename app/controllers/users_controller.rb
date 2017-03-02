@@ -14,11 +14,12 @@ class UsersController < ApplicationController
     @user.email.downcase!
     if @user.save
       session[:user_id] = @user.id.to_s
-      flash[:notice] = "Sign up successful!"
+      flash.now[:notice] = "Sign up successful!"
       redirect_to users_path
     else
-      flash.now.alert = "Invalid login credentials - try again."
-      render :new
+      flash[:notice] = "Invalid Profile Credentials - Try Again."
+      flash[:alert] = "Email/Username may already be in use."
+      redirect_to :back
     end
   end
 
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_attributes(user_params)
+      flash[:notice] = "Profile Updated"
       redirect_to users_path
     else
       render :edit
@@ -39,6 +41,7 @@ class UsersController < ApplicationController
   def destroy
     @user = current_user
     @user.destroy
+    flash.now[:notice] = "Profile Deleted"
     redirect_to root_path
   end
 

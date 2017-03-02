@@ -1,38 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>Gossip Hollywood Gurl</title>
         <%= csrf_meta_tags %>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
 
     <body>
-        <h1><%= link_to 'Gossip Hollywood Gurl', root_path %></h1>
-        <span>
-            <% if current_user %>
-            <%= "Hello, #{current_user.user_name} |" %>
-            <%= link_to "POST YOUR GOSSIP! |", new_post_path %>
-            <%= link_to "Profile |", users_path %>
-            <%= link_to "log Out", logout_path, method: :delete %>
-        <% else %>
-            <%= link_to 'Log In |', login_path %>
-            <%= link_to 'Sign Up', new_user_path %>
-            <% end %>
-            |
-            <%= link_to "About", about_path %>
-        </span>
-        <hr>
+
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        Menu
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <h3><%= link_to 'Gossip Hollywood Gurl', root_path %></h3>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <% if current_user %>
+                        <%= "Hello, #{current_user.user_name}" %>
+                        <%= link_to "POST YOUR GOSSIP!", new_post_path %>
+                        <%= link_to "Profile", users_path %>
+                        <%= link_to "log Out", logout_path, method: :delete %>
+                    <% else %>
+                        <%= link_to 'Log In', login_path %> |
+                        <%= link_to 'Sign Up', new_user_path %> |
+                        <% end %>
+                        <%= link_to "About", about_path %>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+      <div>
         <% if notice %>
         <%= notice %>
         <% end %>
-
+      </div>
+      <div>
         <% if alert %>
         <%= alert %>
         <% end %>
+      </div>
         <%= yield %>
     </body>
-    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </html>

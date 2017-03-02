@@ -16,3 +16,16 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.nav, .navbar-nav, .navbar-right {
+  padding-top: 20px;
+  padding-right: 25px
+}
+
+.navbar, .navbar-default, .navbar-custom, .navbar-fixed-top {
+  margin-bottom: 50px
+}
+
+body {
+  padding-top: 60px;
+}
