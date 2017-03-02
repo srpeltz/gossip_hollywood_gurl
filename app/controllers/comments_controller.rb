@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post)
     else
+      flash[:notice] = "Write a message to post comment."
       redirect_to :back
     end
   end
@@ -28,6 +29,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = current_user.comments.find(params[:id])
     @comment.destroy
+    flash[:notice] = "Comment Deleted"
     redirect_to :back
   end
 

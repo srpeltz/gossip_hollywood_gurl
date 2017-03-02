@@ -55,6 +55,7 @@ class PostsController < ApplicationController
     if params[:view] == 'index'
       redirect_to '/#' + @post.id.to_s
     else
+      flash[:notice] = "Login to vote!"
       redirect_to :back
     end
   end
@@ -66,6 +67,7 @@ class PostsController < ApplicationController
       redirect_to '/#' + @post.id.to_s
     else
       redirect_to :back
+      flash[:notice] = "Login to vote!"
     end
   end
 
