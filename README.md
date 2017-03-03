@@ -6,12 +6,12 @@
 
 Coffee's not hot enough? Welcome to Hollywood!
 
-Introducting Gossip Hollywood Gurl! This is a site to share your assistant job happenings in the entertainment industry! (but we all know that you're still an unpaid intern).
+Introducing Gossip Hollywood Gurl! This is a site to share your assistant job happenings in the entertainment industry! (but we all know that you're still an unpaid intern).
 
 Create a profile and post your horrific stories to share with the world and other users in your industry. You may find another post of your boss from a past job that may give you infinite joy. Maybe add a comment to that post to just affirm how bad the person is (or nice ☺️)!
 
 ###APPROACH TAKEN
-Started with creating the wireframe, ERD, and trello board to help organize and kick off my project. I will then generate the necessary rails MVC for the User and Post MVP. Once completed I will continue onto my stretch goals of commenting on posts and adding a Boss database.
+Started with creating the wireframe, ERD, and Trello board to help organize and kick off my project. I will then generate the necessary rails MVC for the User and Post MVP. Once completed I will continue onto my stretch goals of commenting on posts and adding a Boss database.
 
 ###INSTALLATION INSTRUCTIONS
 <ol>
@@ -34,8 +34,10 @@ Started with creating the wireframe, ERD, and trello board to help organize and 
 <li>PostgreSQL</li>
 </ul>
 
-###Known Bugs
+###Known Bugs/Unsolved Problems
 <li>When on the show page for a post, it will still give you a log in alert when you vote even if you are already logged in</li>
+<li>Couldn't get a background image to render for the about page via scss</li>
+
 
 
 ###<a href="https://trello.com/b/X3rNmUG5/project-2-gossip-hollywood-gurl">Trello Board</a>
