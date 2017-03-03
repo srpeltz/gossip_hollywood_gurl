@@ -15,6 +15,9 @@
                     <%= p.user.user_name %>
                     <i><%= time_ago_in_words(p.created_at) %>
                         ago</i>
+                        <span id="comments-counter">
+                          <%=link_to "Comments: #{p.comments.size}", post_path(p), {class: "btn btn-link btn-xs"} %>
+                        </span>
                 </p>
                 <span>
                     <%= link_to "LOL Welcome to Hollwyood! #{p.get_upvotes.size}", like_path(p, {view: 'index'}), {class: "btn btn-info", method: :put} %>
@@ -22,6 +25,8 @@
                 <span>
                     <%= link_to "You should quit... #{p.get_downvotes.size}", dislike_path(p, {view: 'index'}), {class: "btn btn-warning", method: :put}  %>
                 </span>
+
+
                 <hr>
             </ul>
             <% end %>
