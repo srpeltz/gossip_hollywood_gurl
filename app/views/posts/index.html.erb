@@ -20,7 +20,7 @@
                         </span>
                 </p>
                 <span>
-                    <%= link_to "LOL Welcome to Hollwyood! #{p.get_upvotes.size}", like_path(p, {view: 'index'}), {class: "btn btn-info", method: :put} %>
+                    <%= link_to "LOL Welcome to Hollywood! #{p.get_upvotes.size}", like_path(p, {view: 'index'}), {class: "btn btn-info", method: :put} %>
                 </span>
                 <span>
                     <%= link_to "You should quit... #{p.get_downvotes.size}", dislike_path(p, {view: 'index'}), {class: "btn btn-warning", method: :put}  %>
