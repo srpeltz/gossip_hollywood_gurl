@@ -13,13 +13,12 @@
                             <%= @post.boss_company %></p>
                         <p>Boss Title:
                             <%= @post.boss_title %></p>
-
                     </p>
-
                 </h3>
+                <h4><%= @post.body %></h4>
             </a>
             <p class="post-meta">Post by:
-                <%= @post.body %>
+                  <%= @post.user.user_name %>
                 <i><%= time_ago_in_words(@post.created_at) %>
                     ago</i>
             </p>

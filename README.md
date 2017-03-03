@@ -16,8 +16,9 @@ Started with creating the wireframe, ERD, and trello board to help organize and 
 ###INSTALLATION INSTRUCTIONS
 <ol>
 <li>Clone Repository</li>
-<li>Open app directory</li>
+<li>Rails create to put repository in new folder</li>
 <li>install gems</li>
+<li>rails db:migrate</li>
 <li>Open Rails server</li>
 <li>go to localhost:3000 in your web browser</li>
 </ol>
