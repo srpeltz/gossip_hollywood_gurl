@@ -1,33 +1,26 @@
 <%= form_for @user do |f| %>
   <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, {class: "form-control", placeholder: "*Email"} %>
   </div>
   <div>
-    <%= f.label :user_name %>
-    <%= f.text_field :user_name %>
+    <%= f.text_field :user_name, {class: "form-control", placeholder: "*Username"} %>
   </div>
   <div>
-    <%= f.label :industry %>
-    <%= f.text_field :industry %>
+    <%= f.text_field :industry, {class: "form-control", placeholder: "*Industry"} %>
   </div>
   <div>
-    <%= f.label :company %>
-    <%= f.text_field :company %>
+    <%= f.text_field :company, {class: "form-control", placeholder: "Company"} %>
   </div>
   <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, {class: "form-control", placeholder: "Job title"} %>
   </div>
   <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, {class: "form-control", placeholder: "*password"} %>
   </div>
   <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, {class: "form-control", placeholder: "*password confirmation"} %>
   </div>
   <div>
-    <%= f.submit %>
+    <%= f.submit "Create Account", {class: "btn btn-primary"} %>
   </div>
 <% end %>

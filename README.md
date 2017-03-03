@@ -3,10 +3,10 @@
 ![Ari](./app/assets/images/README_images/ari.png)
 
 ####DESCRIPTION
- 
+
 Coffee's not hot enough? Welcome to Hollywood!
 
-Introducting Gossip Hollywood Gurl! This is a site to share your assistant job happenings in the entertainment industry! (but we all know that you're still an unpaid intern). 
+Introducting Gossip Hollywood Gurl! This is a site to share your assistant job happenings in the entertainment industry! (but we all know that you're still an unpaid intern).
 
 Create a profile and post your horrific stories to share with the world and other users in your industry. You may find another post of your boss from a past job that may give you infinite joy. Maybe add a comment to that post to just affirm how bad the person is (or nice ☺️)!
 
@@ -32,6 +32,10 @@ Started with creating the wireframe, ERD, and trello board to help organize and 
 <li>Heroku</li>
 <li>PostgreSQL</li>
 </ul>
+
+###Known Bugs
+<li>When on the show page for a post, it will still give you a log in alert when you vote even if you are already logged in</li>
+
 
 ###<a href="https://trello.com/b/X3rNmUG5/project-2-gossip-hollywood-gurl">Trello Board</a>
 

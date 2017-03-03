@@ -1,44 +1,75 @@
-<h2><%= @post.title %></h2>
-<p>Boss: <%= @post.boss_name %></p>
-<p>Company: <%= @post.boss_company %></p>
-<p>Boss Title: <%= @post.boss_title %></p>
-<p><%= @post.body %></p>
-<p>Post by:
-  <%= @post.user.user_name %> <i><%= time_ago_in_words(@post.created_at) %> ago</i></p>
-  <div>
-    <span>
-      <%= link_to like_path(@post), url:{controller: "posts", action: "upvote"}, method: :put do %>
-      <button type="button" class="btn btn-info">LOL Welcome to Hollwyood! <%= @post.get_upvotes.size%></button>
-      <% end %>
-    </span>
-    <span>
-      <%= link_to dislike_path(@post), url:{controller: "posts", action: "downvote"}, method: :put do %>
-      <button type="button" class="btn btn-warning">You should Quit...
-      <%= @post.get_downvotes.size %> </button>
-      <% end %>
-    </span>
-  </div>
-<h4>Comments</h4>
-<div>
-  <ul>
-    <% @post.comments.each do |comment| %>
-      <li>
-        <h5>Comment by: <%= comment.user.user_name %> <i><%= time_ago_in_words(comment.created_at) %> ago</i></h5>
-        <%= comment.body %>
-      </li>
-    <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete your comment?"} if current_user == comment.user%>
-    <% end %>
-  </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-preview">
+                <ul>
+                    <h2 class="post-title">
+                        <%= @post.title %>
+                    </h2>
+                    <h3 class="post-subtitle">
+                        <p>Boss:
+                            <%= @post.boss_name %></p>
+                        <p>Company:
+                            <%= @post.boss_company %></p>
+                        <p>Boss Title:
+                            <%= @post.boss_title %></p>
+
+                    </p>
+
+                </h3>
+            </a>
+            <p class="post-meta">Post by:
+                <%= @post.body %>
+                <i><%= time_ago_in_words(@post.created_at) %>
+                    ago</i>
+            </p>
+            <div>
+                <!-- upvote -->
+                <span>
+                    <%= link_to "LOL Welcome to Hollwyood! #{@post.get_upvotes.size}", like_path(@post, {view: 'Post.find(params[:id])'}), {class: "btn btn-info", method: :put} %>
+                </span>
+                <!-- Downvote -->
+                <span>
+                    <%= link_to "You should quit... #{@post.get_downvotes.size}", dislike_path(@post, {view: 'Post.find(params[:id])'}), {class: "btn btn-warning", method: :put}  %>
+                </span>
+            </div>
+            <hr>
+        </ul>
+    </div>
+    <hr>
+    <h4>
+        <strong>Comments</strong>
+    </h4>
+    <div>
+        <ul>
+            <% @post.comments.each do |comment| %>
+            <div>
+                <h5>Comment by:
+                    <%= comment.user.user_name %>
+                    <i><%= time_ago_in_words(comment.created_at) %>
+                        ago</i>
+                </h5>
+                <%= comment.body %>
+            </div>
+            <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete your comment?"} if current_user == comment.user%>
+            <hr>
+            <% end %>
+        </ul>
+    </div>
+    <!-- new comment div -->
+    <p>New Comment:</p>
+    <div id="new-comment-container">
+        <%= form_for @comment, url:{controller: "comments", action: "create"} do |f| %>
+        <% if current_user %>
+        <%= f.text_area :body, placeholder: "Type Here...", size: "50x4" %>
+        <div>
+        <%= f.submit "Post Comment", {class: "btn btn-primary"} %>
+      </div>
+    <% else %>
+        <%= f.text_area :body, disabled: true, placeholder: "Login/sign-up to comment!"  %>
+        <% end %>
+        <% end %>
+    </div>
 </div>
-
-<p>New Comment:</p>
-<%= form_for @comment, url:{controller: "comments", action: "create"} do |f| %>
-<% if current_user %>
-<%= f.text_area :body %>
-  <%= f.submit %>
-<% else %>
-  <%= f.text_area :body, disabled: true, placeholder: "Login/sign-up to comment!"  %>
-<% end %>
-<% end %>
-
-<%= link_to "Home Page", root_path%>
+</div>
+</div>

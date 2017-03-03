@@ -51,11 +51,10 @@ class PostsController < ApplicationController
   def upvote
     @post = Post.find(params[:id])
     @post.upvote_by current_user
-    # redirect_to :back
     if params[:view] == 'index' && current_user
       redirect_to '/#' + @post.id.to_s
     else params[:view] == 'index' && !current_user
-      flash[:notice] = "Login to vote!"
+      flash[:notice] = "Login or Sign Up to vote!"
       redirect_to :back
     end
   end
@@ -66,7 +65,7 @@ class PostsController < ApplicationController
     if params[:view] == 'index' && current_user
       redirect_to '/#' + @post.id.to_s
     else params[:view] == 'index' && !current_user
-      flash[:notice] = "Login to vote!"
+      flash[:notice] = "Login or Sign Up to vote!"
       redirect_to :back
     end
   end

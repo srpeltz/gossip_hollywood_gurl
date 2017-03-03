@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <% @posts.each do |p| %>
+            <% @posts.each do |p| %>
             <div class="post-preview" id="<%= p.id %>">
                 <ul>
                     <h2 class="post-title">
@@ -16,31 +16,17 @@
                     <i><%= time_ago_in_words(p.created_at) %>
                         ago</i>
                 </p>
-                    <span>
-                        <%= link_to like_path(p, {view: 'index'}), method: :put do %>
-                        <button type="button" class="btn btn-info">LOL Welcome to Hollwyood!
-                        <%= p.get_upvotes.size %>
-                        </button>
-                        <% end %>
-                    </span>
-                    <span>
-                        <%= link_to dislike_path(p, {view: 'index'}), method: :put do %>
-                        <button type="button" class="btn btn-warning">You should Quit...
-                        <%= p.get_downvotes.size %>
-                      </button>
-                        <% end %>
-                    </span>
-                    <hr>
+                <span>
+                    <%= link_to "LOL Welcome to Hollwyood! #{p.get_upvotes.size}", like_path(p, {view: 'index'}), {class: "btn btn-info", method: :put} %>
+                </span>
+                <span>
+                    <%= link_to "You should quit... #{p.get_downvotes.size}", dislike_path(p, {view: 'index'}), {class: "btn btn-warning", method: :put}  %>
+                </span>
+                <hr>
             </ul>
             <% end %>
         </div>
         <hr>
-        <!-- Pager -->
-        <ul class="pager">
-            <li class="next">
-                <a href="#">Older Posts →</a>
-            </li>
-        </ul>
     </div>
 </div>
 </div>

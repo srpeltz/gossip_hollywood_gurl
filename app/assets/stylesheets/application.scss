@@ -10,26 +10,19 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
 @import "bootstrap-sprockets";
+@import "bootswatch/cosmo/variables";
 @import "bootstrap";
+@import "bootswatch/cosmo/bootswatch";
 
-.nav, .navbar-nav, .navbar-right {
-  padding-top: 20px;
-  padding-right: 25px
+
+#navbar-current-user {
+  color: white;
+  margin-top: 15px;
 }
 
-.navbar, .navbar-default, .navbar-custom, .navbar-fixed-top {
-  margin-bottom: 50px
-}
-
-.post-preview {
-  padding: 10px 0 10px 0;
-}
-
-.btn-info a{
-  text-decoration:none;
+#new-comment-container {
+  margin-bottom: 20px;
 }
