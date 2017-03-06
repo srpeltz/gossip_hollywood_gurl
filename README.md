@@ -39,7 +39,9 @@ Started with creating the wireframe, ERD, and Trello board to help organize and 
 ###Known Bugs/Unsolved Problems
 <li>When on the show page for a post, it will still give you a log in alert when you vote even if you are already logged in</li>
 <li>Couldn't get a background image to render for the about page via scss</li>
-
+<li>Get the update profile to change username/email/password etc...</li>
+<li>Using Ajax to make buttons render more smoothly</li>
+<li>Fix "/edit" bug for editing a post</li>
 
 
 ###<a href="https://trello.com/b/X3rNmUG5/project-2-gossip-hollywood-gurl">Trello Board</a>
