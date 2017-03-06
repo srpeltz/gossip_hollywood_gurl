@@ -28,6 +28,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    redirect_to @post if @post.user != current_user
   end
 
   def update
@@ -51,9 +52,12 @@ class PostsController < ApplicationController
   def upvote
     @post = Post.find(params[:id])
     @post.upvote_by current_user
+    print params[:view]
     if params[:view] == ('index') && current_user
       redirect_to '/#' + @post.id.to_s
-    else  params[:view] == ('index' || @post) && !current_user
+    elsif current_user
+      redirect_to :back
+    else
       flash[:notice] = "Login or Sign Up to vote!"
       redirect_to :back
     end
@@ -64,7 +68,9 @@ class PostsController < ApplicationController
     @post.downvote_by current_user
     if params[:view] == 'index' && current_user
       redirect_to '/#' + @post.id.to_s
-    else params[:view] == 'index' && !current_user
+    elsif current_user
+      redirect_to :back
+    else
       flash[:notice] = "Login or Sign Up to vote!"
       redirect_to :back
     end

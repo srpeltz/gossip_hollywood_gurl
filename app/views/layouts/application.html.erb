@@ -14,13 +14,13 @@
         <%= render 'partials/nav' %>
         <div>
             <% if notice %>
-            <%= notice %>
+            <div class="alert-success"><%= notice %></div>
             <% end %>
         </div>
 
         <div>
             <% if alert %>
-            <%= alert %>
+          <div class="alert-danger">  <%= alert %></div>
             <% end %>
         </div>
       <div class="container"
